@@ -8,13 +8,8 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-
 import com.example.fboysapplication.direct.ChangePassFragment;
 import com.example.fboysapplication.direct.HistoryFragment;
 import com.example.fboysapplication.direct.HomeFragment;
@@ -23,16 +18,17 @@ import com.example.fboysapplication.direct.StreamViewFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-     private DrawerLayout mDrawerLayout;
+    private DrawerLayout mDrawerLayout;
 
-     private static final int FRAGMENT_HOME=0;
+    private static final int FRAGMENT_HOME=0;
     private static final int FRAGMENT_STREAM_VIEW=1;
     private static final int FRAGMENT_HISTORY=2;
     private static final int FRAGMENT_PROFILE=3;
     private static final int FRAGMENT_CHANGEPASS=4;
 
     private int mCurrentFragment = FRAGMENT_HOME;
-   /* Button bntback;*/
+
+    // Button bntback;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +47,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
         replaceFragment(new HomeFragment());
         navigationView.getMenu().findItem(R.id.nav_home).setChecked(true);
-
     }
 
     @Override
@@ -89,7 +84,9 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             }
 
         }
+
         mDrawerLayout.closeDrawer(GravityCompat.START);
+
         return true;
     }
 
@@ -101,9 +98,11 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             super.onBackPressed();
         }
     }
+
     private void replaceFragment(Fragment fragment){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.content_frame,fragment);
         transaction.commit();
     }
+
 }

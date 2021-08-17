@@ -4,17 +4,24 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import android.webkit.WebView;
 import androidx.fragment.app.Fragment;
 
 import com.example.fboysapplication.R;
 
 public class StreamViewFragment extends Fragment {
-    @Nullable
+    private WebView webView;
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_stream_view,container,false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_stream_view,container,false);
+
+        webView = (WebView)view.findViewById(R.id.streamWebView);
+        webView.loadUrl("https://stackoverflow.com/questions/11078487/whats-toolscontext-in-android-layout-files");
+
+        return view;
     }
+
+
+
 }
