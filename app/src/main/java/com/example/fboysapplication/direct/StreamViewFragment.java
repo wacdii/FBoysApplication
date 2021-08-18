@@ -17,11 +17,10 @@ public class StreamViewFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_stream_view,container,false);
 
         webView = (WebView)view.findViewById(R.id.streamWebView);
-        webView.loadUrl("https://stackoverflow.com/questions/11078487/whats-toolscontext-in-android-layout-files");
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl("http://192.168.1.7:5000/");
 
         return view;
     }
-
-
 
 }

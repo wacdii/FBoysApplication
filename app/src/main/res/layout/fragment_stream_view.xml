@@ -14,7 +14,6 @@
         android:text="StreamView"
         android:textSize="24sp"
         android:gravity="center">
-
     </TextView>
 
     <WebView
